@@ -29,7 +29,7 @@
 @media (min-width: 700px) { :root { --gut: 40px; } }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body { margin: 0; background: var(--white); color: var(--navy); font: 400 17px/1.6 var(--sans); overflow-x: hidden; }
 img { display: block; max-width: 100%; height: auto; }
