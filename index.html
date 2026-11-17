@@ -14,7 +14,7 @@
 <link rel="icon" href="assets/logo-shield.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,6 +30,7 @@
     <nav id="site-nav" class="site-nav" aria-label="Primary">
       <ul>
         <li><a href="#buy">How to buy</a></li>
+        <li><a href="vendor.html">Vendor record</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#buyers">Buyers</a></li>
         <li><a href="#compliance">Compliance</a></li>
@@ -58,25 +59,16 @@
         </div>
       </div>
 
-      <article class="vendor-card" id="vendor" aria-labelledby="vendor-title">
-        <header class="vc-head">
-          <h2 id="vendor-title">Vendor record</h2>
-          <p class="vc-status"><span class="dot" aria-hidden="true"></span><span>SAM.gov</span> <strong>ACTIVE</strong></p>
-        </header>
-        <dl class="vc-list">
-          <div><dt>UEI</dt><dd class="code code-lg">DYPGA6FNQ3J6</dd></div>
-          <div><dt>CAGE</dt><dd class="code code-lg">9ZHH2</dd></div>
-          <div><dt>Location</dt><dd>Castaic, California</dd></div>
-          <div><dt>Designation</dt><dd>Small Business &middot; <span class="nw">Woman-Owned</span></dd></div>
-          <div><dt>California</dt><dd>SB Certified (Cal eProcure / OSDS)</dd></div>
-          <div><dt>NAICS</dt><dd class="code">337127 &middot; 337215 &middot; 423210<br>444220 &middot; 451110</dd></div>
+      <aside class="hero-reg" aria-labelledby="reg-title">
+        <h2 id="reg-title">Registered vendor</h2>
+        <p>SAM.gov active. All representations and certifications current.</p>
+        <dl>
+          <div><dt>UEI</dt><dd>DYPGA6FNQ3J6</dd></div>
+          <div><dt>CAGE</dt><dd>9ZHH2</dd></div>
         </dl>
-        <div class="vc-actions">
-          <button class="btn btn-navy" type="button" data-copy-vendor aria-describedby="copy-status-1"><span data-copy-label>Copy vendor details</span></button>
-          <a href="https://sam.gov/" rel="noopener">Verify on SAM.gov</a>
-        </div>
-        <p class="vc-foot"><span id="copy-status-1" class="vc-live" aria-live="polite"></span>Record current as of 16 Nov 2026. Copies as plain text for your vendor file.</p>
-      </article>
+        <p>Small Business &middot; Woman-Owned. California SB certified through Cal eProcure.</p>
+        <a class="text-link" href="vendor.html">Open the vendor record</a>
+      </aside>
     </div>
     <figure class="hero-band">
       <span class="duo"><img src="assets/pavilion.jpg" alt="Large open-sided park pavilion with a metal roof and rows of picnic tables beneath mature oak trees" width="1800" height="930"></span>
@@ -357,23 +349,21 @@
       <img src="assets/logo.png" alt="Outdoor Surplus USA" width="120" height="120">
       <p>Castaic, California<br><a href="tel:+16616073672">(661) 607-3672</a><br><a href="mailto:info@outdoorsurplususa.com">info@outdoorsurplususa.com</a></p>
     </div>
-    <article class="vendor-card vendor-card--foot" aria-label="Vendor record">
-      <header class="vc-head">
-        <p class="vc-h">Vendor record</p>
-        <p class="vc-status"><span class="dot" aria-hidden="true"></span><span>SAM.gov</span> <strong>ACTIVE</strong></p>
-      </header>
-      <dl class="vc-list vc-list--row">
-        <div><dt>UEI</dt><dd class="code">DYPGA6FNQ3J6</dd></div>
-        <div><dt>CAGE</dt><dd class="code">9ZHH2</dd></div>
-        <div><dt>Designation</dt><dd>Small Business &middot; <span class="nw">Woman-Owned</span></dd></div>
-        <div><dt>California</dt><dd>SB Certified (Cal eProcure / OSDS)</dd></div>
-        <div><dt>NAICS</dt><dd class="code">337127 &middot; 337215 &middot; 423210 &middot; 444220 &middot; 451110</dd></div>
-      </dl>
-      <div class="vc-actions">
-        <button class="btn btn-white" type="button" data-copy-vendor aria-describedby="copy-status-2"><span data-copy-label>Copy vendor details</span></button>
-        <span id="copy-status-2" class="vc-live" aria-live="polite"></span>
+    <div class="foot-cols">
+      <div>
+        <h2 class="foot-h">Vendor</h2>
+        <p>SAM.gov active<br>UEI DYPGA6FNQ3J6<br>CAGE 9ZHH2<br><a href="vendor.html">Full vendor record</a></p>
       </div>
-    </article>
+      <div>
+        <h2 class="foot-h">Buying</h2>
+        <ul class="foot-list">
+          <li><a href="#buy">Four ways to buy</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#compliance">Compliance</a></li>
+          <li><a href="#quote">Request a quote</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
   <div class="wrap foot-links">
     <ul>

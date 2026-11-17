@@ -1,6 +1,6 @@
 /* Outdoor Surplus USA, Variation B: "Docket"
    Big Shoulders Display (civic signage, condensed) for display,
-   Public Sans (USWDS) for reading and UI, IBM Plex Mono for codes.
+   Public Sans (USWDS) for reading and UI, and for reference codes.
    Navy dominates; photographs share one navy duotone so the set grades together. */
 
 :root {
@@ -20,7 +20,7 @@
 
   --display: "Big Shoulders Display", "Arial Narrow", Arial, sans-serif;
   --sans: "Public Sans", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, Consolas, Menlo, monospace;
+  --mono: var(--sans);
 
   --r: 2px;
   --wrap: 1280px;
@@ -38,12 +38,12 @@ h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 800; line-heig
 p { margin: 0; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut); }
-.code { font-family: var(--mono); font-weight: 600; letter-spacing: .03em; }
+.code { font-weight: 600; font-variant-numeric: tabular-nums; }
 .nw { white-space: nowrap; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
-.site-header :focus-visible, .hero :focus-visible, .buyers :focus-visible, .about :focus-visible, .site-footer :focus-visible { outline-color: var(--white); }
+.site-header :focus-visible, .hero :focus-visible, .record--navy :focus-visible, .buyers :focus-visible, .about :focus-visible, .site-footer :focus-visible { outline-color: var(--white); }
 
 .skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--white); color: var(--navy); padding: 10px 16px; border-radius: var(--r); }
 .skip:focus { top: 12px; }
@@ -114,27 +114,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .hero h1 { font-size: 58px; }
   .lede { font-size: 17px; }
   .hero-band { height: 160px; }
-}
-
-/* ---------- Vendor card ---------- */
-.vendor-card { background: var(--white); color: var(--navy); border: 1px solid var(--hair-strong); border-radius: var(--r); }
-.vc-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 22px; border-bottom: 3px solid var(--navy); }
-.vc-head h2, .vc-h { font: 700 13px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
-.vc-status { display: flex; align-items: center; gap: 8px; font: 500 14px var(--sans); }
-.vc-status strong { font: 600 13px var(--mono); letter-spacing: .1em; padding: 3px 7px; border: 1px solid var(--navy); }
-.dot { width: 9px; height: 9px; background: var(--steel); display: inline-block; }
-.vc-list { margin: 0; }
-.vc-list > div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 11px 22px; border-bottom: 1px solid var(--hair); align-items: baseline; }
-.vc-list dt { font: 600 11px/1.2 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--steel); }
-.vc-list dd { margin: 0; font-size: 15px; font-weight: 500; line-height: 1.4; }
-.vc-list dd.code-lg { font-size: 22px; font-weight: 600; }
-.vc-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 20px; padding: 16px 22px 6px; }
-.vc-actions a { font-weight: 600; font-size: 15px; }
-.vc-foot { padding: 4px 22px 16px; font-size: 13px; color: var(--steel); }
-.vc-live:not(:empty) { display: block; color: var(--navy); font-weight: 600; margin-bottom: 4px; }
-@media (max-width: 480px) {
-  .vc-list > div { grid-template-columns: 1fr; gap: 4px; }
-  .vc-actions .btn { width: 100%; }
 }
 
 /* ---------- Section heads ---------- */
@@ -267,7 +246,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   border: 0; border-bottom: 2px solid var(--navy); border-radius: var(--r) var(--r) 0 0; padding: 12px; min-height: 48px; width: 100%;
 }
 .field textarea { resize: vertical; }
-.field .code-input { font-family: var(--mono); }
 .field input:focus, .field select:focus, .field textarea:focus { outline: 3px solid var(--navy); outline-offset: 0; background: var(--white); }
 .field [aria-invalid="true"] { border-bottom: 3px solid var(--red); }
 .error { margin-top: 6px; font-size: 14px; color: var(--red); font-weight: 600; }
@@ -283,20 +261,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .foot-brand img { width: 110px; background: var(--white); padding: 10px; border-radius: var(--r); }
 .foot-brand p { margin-top: 18px; font-size: 15px; line-height: 1.8; color: #DCE2EA; }
 .foot-brand a { color: var(--white); }
-.vendor-card--foot { background: transparent; color: var(--white); border-color: var(--hair-light); }
-.vendor-card--foot .vc-head { border-bottom-color: var(--white); }
-.vendor-card--foot .vc-status strong { border-color: var(--white); }
-.vendor-card--foot .dot { background: var(--cream); }
-.vendor-card--foot .vc-list dt { color: var(--mist); }
-.vc-list--row { display: grid; grid-template-columns: repeat(2, 1fr); }
-.vc-list--row > div { border-color: var(--hair-light); }
-.vc-list--row > div:last-child { grid-column: 1 / -1; }
-.vendor-card--foot .vc-actions { padding-bottom: 18px; }
-.vendor-card--foot .vc-live:not(:empty) { color: var(--white); margin: 0; }
 .foot-links { margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--hair-light); font-size: 14px; color: var(--mist); }
 .foot-links ul { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-bottom: 12px; }
 .foot-links a { color: var(--white); }
-@media (max-width: 860px) { .foot-grid { grid-template-columns: 1fr; gap: 32px; } .vc-list--row { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .foot-grid { grid-template-columns: 1fr; gap: 32px; } }
 
 /* ---------- Reveal ---------- */
 .can-reveal [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
@@ -309,3 +277,52 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .kicker { flex-wrap: wrap; row-gap: 8px; }
 .big-n { width: 1.2em; }
 @media (max-width: 860px) { .paths-grid li { grid-template-columns: 1.2em 1fr; font-size: 96px; } .paths-grid li > div { font-size: 17px; } }
+
+/* ---------- Homepage registration aside ---------- */
+.hero-reg { border-left: 6px solid var(--red); padding: 4px 0 4px 28px; align-self: end; margin-bottom: 8px; }
+.hero-reg h2 { font-size: 34px; font-weight: 900; }
+.hero-reg > p { margin-top: 12px; font-size: 16px; color: #DCE2EA; }
+.hero-reg dl { margin: 18px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 18px; align-items: baseline; }
+.hero-reg dl div { display: contents; }
+.hero-reg dt { font: 700 13px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mist); }
+.hero-reg dd { margin: 0; font: 800 40px/1.05 var(--display); letter-spacing: .03em; }
+.hero-reg .text-link { display: inline-block; margin-top: 18px; }
+
+/* ---------- Footer columns ---------- */
+.foot-cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+.foot-h { font: 800 22px/1 var(--display); text-transform: uppercase; padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1px solid var(--hair-light); }
+.foot-cols p, .foot-list { font-size: 15px; line-height: 1.8; color: #DCE2EA; }
+.foot-cols a { color: var(--white); }
+@media (max-width: 560px) { .foot-cols { grid-template-columns: 1fr; } }
+
+/* ---------- Vendor record page ---------- */
+.site-nav ul a[aria-current="page"] { border-bottom-color: var(--red); }
+.page-hero { align-items: end; padding-bottom: 72px; }
+.page-hero-side .lede { margin-top: 0; }
+.copy-status:not(:empty) { margin-top: 14px; font-weight: 600; }
+.record { padding: 104px 0; }
+.record--navy { background: var(--navy); color: var(--white); }
+.record--navy .head-split p { color: #DCE2EA; }
+.record--ice { background: var(--ice); }
+.record-table { width: 100%; border-collapse: collapse; border-top: 2px solid currentColor; }
+.record-table th, .record-table td { text-align: left; vertical-align: baseline; padding: 20px 20px 20px 0; border-bottom: 1px solid var(--hair); font-size: 19px; }
+.record--navy .record-table th, .record--navy .record-table td { border-bottom-color: var(--hair-light); }
+.record-table tbody th { width: 32%; font: 700 15px/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--steel); }
+.record--navy .record-table tbody th { color: var(--mist); }
+.record-table td { font-weight: 500; }
+.row-id td { font: 900 clamp(48px, 6vw, 84px)/.9 var(--display); letter-spacing: .03em; }
+.state { display: inline-flex; align-items: center; gap: 10px; font: 900 34px/1 var(--display); text-transform: uppercase; letter-spacing: .04em; }
+.dot { width: 12px; height: 12px; background: var(--steel); display: inline-block; }
+.naics-table thead th { font: 600 11px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--steel); padding: 14px 0 10px; border-bottom: 1px solid var(--hair); }
+.naics-table tbody th { font: 900 44px/1 var(--display); letter-spacing: .02em; color: var(--red); text-transform: none; }
+.docs--wide { display: grid; grid-template-columns: 1fr 1fr; column-gap: 56px; border-top: 2px solid var(--navy); }
+.compliance .head-split a { font-weight: 600; }
+@media (max-width: 760px) {
+  .record { padding: 64px 0; }
+  .record-table tbody th, .record-table td { display: block; width: auto; padding: 0; border: 0; }
+  .record-table tr { display: block; padding: 16px 0; border-bottom: 1px solid var(--hair); }
+  .record--navy .record-table tr { border-bottom-color: var(--hair-light); }
+  .record-table tbody th { margin-bottom: 6px; }
+  .naics-table thead { display: none; }
+  .docs--wide { grid-template-columns: 1fr; }
+}
